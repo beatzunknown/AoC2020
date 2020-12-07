@@ -4,7 +4,7 @@ pattern = re.compile(r'(\d+)-(\d+) ([a-z]): (\w+)')
 data = []
 
 with open('02.txt', 'r') as f:
-	data = [pattern.search(line.rstrip()).groups() for line in f.readlines()]
+    data = [pattern.search(line.rstrip()).groups() for line in f.readlines()]
 
 # a is lowerbound, b is upperbound, c is character, d is password string
 data = [(int(a),int(b),c,d) for a,b,c,d in data]
