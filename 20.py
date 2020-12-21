@@ -38,8 +38,14 @@ for tile, tile_edges in edges.items():
         joining_edges += (tiles_w_edge == 1)
     if joining_edges == 2:
         corners.append(tile)
-
 part_1 = math.prod(corners)
+
+monster = [
+"                  # ",
+"#    ##    ##    ###",
+" #  #  #  #  #  #   "]
+
+
 part_2 = 0
 
 print("Part 1:", part_1)
