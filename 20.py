@@ -7,7 +7,7 @@ with open('20.txt', 'r') as f:
         if not tile:
             break
         tile = tile.splitlines()
-        data[int(tile[0][5:-1])] = tile[1:]
+        data[int(tile[0][5:-1])] = [c for c in tile[1:]]
 
 edges = {}
 h = len(list(data.values())[0])
