@@ -30,12 +30,15 @@ def neighbours(coord):
 def active_neighbours(cubes, coord):
     return sum(cubes.get(n, '.')=='#' for n in neighbours(coord))
 
+# each recursive call generates a new axis coord
 def expand(cubes, bounds, n, coord):
     if n >= 0:
         for x in range(*bounds[n]):
             new = [c for c in coord] + [x]
             expand(cubes, bounds, n-1, new)
     else:
+        # reverse since bounds go from dimension 1->n
+        # but coords are built dimension n->1
         c = tuple(coord[::-1])
         if c not in cubes:
             cubes[c] = '.'

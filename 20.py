@@ -1,5 +1,7 @@
 import math
 
+cw_rot = lambda l: list(zip(*reversed(l)))
+flip = lambda l: [l[len(l)-1-i] for i in range(len(l))]
 data = {}
 
 with open('20.txt', 'r') as f:
